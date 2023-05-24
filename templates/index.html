@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <h1>To Do List</h1>
+        <a href="/create">リストに新規追加</a>
+        <table class="table table-striped">
+            </th><th>内容</th><th>期限</th><th></th><th></th></tr>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td  {% if post.done %} class="done" {% endif %}>{{ post.title }}</td>
+                <td  {% if post.done %} class="done" {% endif %}>{{ post.due.date() }}</td>
+                <td><form action="/change_status/{{ post.id }}">
+                    {% if post.done %}<button type="submit" class="btn btn-outline-warning btn-sm">未完了に戻す</button>
+                    {% else %}<button type="submit" class="btn btn-secondary btn-sm">完了ボタン　</button>
+                    {% endif %}
+                    </form></td>
+                <td><a href="/detail/{{ post.id }}">詳細</a></td>
+    
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="card" style="width: 18rem; margin: 3rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}の詳細：</h5>
+    <p class="card-text">{{ post.detail }}</p>
+    <a href="/">戻る</a>
+  </div>
+</div>
+
+{% endblock %}

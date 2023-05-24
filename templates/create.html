@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+
+<div class="card" style="width: 18rem; margin: 3rem;">
+    <a href="/">戻る</a>
+  <div class="card-body">
+    <h4>新しいtodoを追加する</h4>
+    <div class="form">
+        <form action="/" method="POST">
+            <div class="mb-3">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="detail" class="form-label">Detail</label>
+                <textarea id="detail" class="form-control" name="detail"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="due">Due</label>
+                <input type="date" class="form-control" id="due" name="due" required>
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
